@@ -1,0 +1,68 @@
+{
+  "customers": {
+    "C101": {"name": "Priya Mehta",  "email": "priya.m@example.com",  "tier": "Gold",     "lifetime_value": 8000,  "dnr_claims_12m": 0},
+    "C102": {"name": "Arjun Rao",    "email": "arjun.r@example.com",  "tier": "Silver",   "lifetime_value": 5000,  "dnr_claims_12m": 0},
+    "C103": {"name": "Karan Shah",   "email": "karan.s@example.com",  "tier": "Standard", "lifetime_value": 3000,  "dnr_claims_12m": 3},
+    "C104": {"name": "Neha Iyer",    "email": "neha.i@example.com",   "tier": "Gold",     "lifetime_value": 12000, "dnr_claims_12m": 0},
+    "C105": {"name": "Rahul Verma",  "email": "rahul.v@example.com",  "tier": "Standard", "lifetime_value": 2500,  "dnr_claims_12m": 0},
+    "C106": {"name": "Sneha Patel",  "email": "sneha.p@example.com",  "tier": "Silver",   "lifetime_value": 6000,  "dnr_claims_12m": 0},
+    "C107": {"name": "Vikram Joshi", "email": "vikram.j@example.com", "tier": "Silver",   "lifetime_value": 4000,  "dnr_claims_12m": 0}
+  },
+
+  "orders": {
+    "ORD-1001": {"customer_id": "C101", "item": "Bluetooth headphones", "amount": 3499,  "payment_method": "UPI",         "order_date": "2026-11-03", "status": "delivered", "carrier": "SwiftShip",   "tracking_id": "SS99001"},
+    "ORD-1002": {"customer_id": "C103", "item": "Smartwatch",           "amount": 14999, "payment_method": "Credit card", "order_date": "2026-11-01", "status": "delivered", "carrier": "ExpressLine", "tracking_id": "EL55002"},
+    "ORD-1003": {"customer_id": "C102", "item": "Running shoes",        "amount": 2799,  "payment_method": "UPI",         "order_date": "2026-10-22", "status": "returned",  "carrier": "SwiftShip",   "tracking_id": "SS99003"},
+    "ORD-1004": {"customer_id": "C104", "item": "Air fryer",            "amount": 6499,  "payment_method": "Credit card", "order_date": "2026-10-15", "status": "returned",  "carrier": "ExpressLine", "tracking_id": "EL55004"},
+    "ORD-1006": {"customer_id": "C106", "item": "Ceramic dinner set",   "amount": 4250,  "payment_method": "Net banking", "order_date": "2026-11-02", "status": "shipped",   "carrier": "SwiftShip",   "tracking_id": "SS99077"},
+    "ORD-1007": {"customer_id": "C107", "item": "Wireless mouse",       "amount": 899,   "payment_method": "UPI",         "order_date": "2026-11-06", "status": "delivered", "carrier": "SwiftShip",   "tracking_id": "SS99007"}
+  },
+
+  "delivery_events": {
+    "SS99001": [
+      {"time": "2026-11-04T11:20", "event": "Picked up",        "location": "Mumbai hub"},
+      {"time": "2026-11-05T22:05", "event": "In transit",       "location": "Ahmedabad hub"},
+      {"time": "2026-11-07T09:10", "event": "Out for delivery", "location": "Satellite, Ahmedabad"},
+      {"time": "2026-11-07T18:42", "event": "Delivered",        "location": "Satellite, Ahmedabad",
+       "proof": {"photo": false, "signature": false, "gps_distance_m": 1850}}
+    ],
+    "EL55002": [
+      {"time": "2026-11-02T10:00", "event": "Picked up",        "location": "Delhi hub"},
+      {"time": "2026-11-04T07:30", "event": "In transit",       "location": "Ahmedabad hub"},
+      {"time": "2026-11-06T09:00", "event": "Out for delivery", "location": "Bopal, Ahmedabad"},
+      {"time": "2026-11-06T15:20", "event": "Delivered",        "location": "Bopal, Ahmedabad",
+       "proof": {"photo": true, "signature": true, "signed_by": "K. Shah", "gps_distance_m": 25}}
+    ],
+    "SS99003": [
+      {"time": "2026-10-23T10:00", "event": "Picked up",        "location": "Pune hub"},
+      {"time": "2026-10-25T16:40", "event": "Delivered",        "location": "Navrangpura, Ahmedabad",
+       "proof": {"photo": true, "signature": false, "gps_distance_m": 30}},
+      {"time": "2026-11-04T12:00", "event": "Return picked up", "location": "Navrangpura, Ahmedabad"},
+      {"time": "2026-11-06T09:30", "event": "Return received at warehouse", "location": "Pune returns centre"}
+    ],
+    "EL55004": [
+      {"time": "2026-10-16T10:00", "event": "Picked up",        "location": "Delhi hub"},
+      {"time": "2026-10-18T13:15", "event": "Delivered",        "location": "Vastrapur, Ahmedabad",
+       "proof": {"photo": true, "signature": true, "signed_by": "N. Iyer", "gps_distance_m": 15}},
+      {"time": "2026-10-27T11:00", "event": "Return picked up", "location": "Vastrapur, Ahmedabad"},
+      {"time": "2026-10-29T17:45", "event": "Return received at warehouse", "location": "Delhi returns centre"}
+    ],
+    "SS99077": [],
+    "SS99007": [
+      {"time": "2026-11-07T10:00", "event": "Picked up",        "location": "Mumbai hub"},
+      {"time": "2026-11-09T08:30", "event": "Out for delivery", "location": "Maninagar, Ahmedabad"},
+      {"time": "2026-11-09T14:00", "event": "Delivered",        "location": "Maninagar, Ahmedabad",
+       "proof": {"photo": false, "signature": false, "gps_distance_m": 640}}
+    ]
+  },
+
+  "returns": {
+    "ORD-1003": {"return_id": "RET-3003", "received_at_warehouse": "2026-11-06", "inspection_status": "passed", "inspection_date": "2026-11-06"},
+    "ORD-1004": {"return_id": "RET-3004", "received_at_warehouse": "2026-10-29", "inspection_status": "passed", "inspection_date": "2026-10-30"}
+  },
+
+  "refunds": {
+    "ORD-1003": {"refund_id": "RF-7003", "status": "processing",    "amount": 2799, "method": "UPI",         "initiated_date": "2026-11-09", "reference": "UTR 6118 2290 4471"},
+    "ORD-1004": {"refund_id": "RF-7004", "status": "not_initiated", "amount": 6499, "method": "Credit card", "initiated_date": null,         "reference": null}
+  }
+}

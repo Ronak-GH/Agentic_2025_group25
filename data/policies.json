@@ -1,0 +1,50 @@
+[
+  {
+    "id": "POL-GEN-01",
+    "title": "Support assistant authority",
+    "keywords": ["authority", "refund", "cancel", "edit", "recommend", "issue", "approve"],
+    "text": "The support assistant only investigates records and recommends the next action. It never issues refunds, reships, cancels or edits orders. Any refund or reshipment is executed by the authorised Payments or Fulfilment team after approval."
+  },
+  {
+    "id": "POL-DNR-01",
+    "title": "Delivered but not received: 48-hour waiting period",
+    "keywords": ["delivered", "not received", "missing", "package", "wait", "48", "hours", "neighbour"],
+    "text": "Carriers sometimes mark a parcel as delivered before the final hand-over. If fewer than 48 hours have passed since the 'Delivered' scan, ask the customer to check with neighbours, family and building security, and re-check after the 48-hour window. Do not open an investigation or offer a replacement yet."
+  },
+  {
+    "id": "POL-DNR-02",
+    "title": "Delivered but not received: investigation and goodwill resolution",
+    "keywords": ["delivered", "not received", "missing", "investigation", "carrier", "proof", "gps", "reship", "replacement", "goodwill", "refund"],
+    "text": "A not-received claim must be reported within 7 days of the 'Delivered' scan. After 48 hours, if there is no proof of delivery (no photo and no signature) or the delivery GPS point is more than 200 m from the address, open a carrier investigation (3-5 business days). For orders worth Rs 5,000 or less, where the customer has no not-received claims in the last 12 months, the agent may instead recommend an immediate reshipment or refund as goodwill; the carrier claim is then filed in the background."
+  },
+  {
+    "id": "POL-DNR-03",
+    "title": "Repeat not-received claims and high-value signed deliveries",
+    "keywords": ["fraud", "risk", "repeat", "claims", "high value", "signature", "signed", "not received", "refund"],
+    "text": "If the customer has 2 or more not-received claims in the last 12 months, or the order is worth more than Rs 10,000 and the delivery was signed for, do not recommend a refund or reshipment and do not open a routine carrier investigation. Escalate the case to the Risk & Fraud review team with the proof of delivery attached."
+  },
+  {
+    "id": "POL-RET-01",
+    "title": "Returns window and inspection",
+    "keywords": ["return", "window", "inspection", "warehouse", "pickup", "passed", "failed"],
+    "text": "Items can be returned within 10 days of delivery. Returned items are inspected within 2 business days of reaching the warehouse. An item that passes inspection becomes eligible for a refund to the original payment method; an item that fails is shipped back to the customer."
+  },
+  {
+    "id": "POL-REF-01",
+    "title": "Refund initiation SLA after inspection",
+    "keywords": ["refund", "initiate", "initiation", "inspection", "passed", "sla", "delay", "finance", "not initiated", "status"],
+    "text": "A refund must be initiated within 2 business days after the returned item passes inspection. If the refund has not been initiated after 2 business days, escalate to Finance Operations as priority P1 with the return ID and inspection date, and tell the customer a specialist team is expediting it."
+  },
+  {
+    "id": "POL-REF-02",
+    "title": "Refund credit timelines by payment method",
+    "keywords": ["refund", "credit", "timeline", "upi", "card", "net banking", "wallet", "cod", "trace", "utr", "arn", "bank", "sla", "status", "money back"],
+    "text": "After a refund is initiated, the credit reaches the customer in: UPI or wallet 1-3 business days; credit/debit card 5-7 business days; net banking 5-7 business days; cash-on-delivery bank transfer 7 business days. Within this window, inform the customer of the status and share the refund reference (UTR/ARN). Beyond this window, raise a payment trace with the payment gateway using the reference."
+  },
+  {
+    "id": "POL-VER-01",
+    "title": "Identity verification and conflicting or incomplete records",
+    "keywords": ["identity", "verify", "verification", "mismatch", "conflict", "incomplete", "missing", "privacy", "wrong order", "different customer", "amount"],
+    "text": "If the person contacting support is not the customer on the order, or key details in the message (item, amount, order number) conflict with the order record, or the records needed to decide are missing, do not disclose order details and do not act on the order. Ask the customer to confirm the order number, registered email or phone and invoice, and continue only after the details reconcile."
+  }
+]

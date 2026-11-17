@@ -1,0 +1,98 @@
+[
+  {
+    "id": "N",
+    "title": "Normal: refund in progress, customer asks when it arrives",
+    "category": "Normal",
+    "ticket": {
+      "ticket_id": "TKT-501",
+      "received_at": "2026-11-10T10:00",
+      "customer_id": "C102",
+      "channel": "chat",
+      "message": "Hi, I returned the running shoes from order ORD-1003. When will I get my money back?"
+    },
+    "gold": {
+      "acceptable_actions": ["INFORM_STATUS"],
+      "why": "Inspection passed on 6 Nov, refund initiated on 9 Nov (within 2 business days) by UPI; only 1 business day of the 1-3 day UPI window has passed (POL-REF-02). Nothing is wrong yet."
+    }
+  },
+  {
+    "id": "A",
+    "title": "Scenario A: marked delivered, customer says not received",
+    "category": "Critical",
+    "ticket": {
+      "ticket_id": "TKT-502",
+      "received_at": "2026-11-10T10:00",
+      "customer_id": "C101",
+      "channel": "email",
+      "message": "My order ORD-1001 shows delivered on 7th November but I never received it. Nobody at home got any package. Please help."
+    },
+    "gold": {
+      "acceptable_actions": ["OPEN_CARRIER_INVESTIGATION", "OFFER_RESHIP_OR_REFUND"],
+      "why": "63 hours since the Delivered scan, no photo or signature, GPS point 1,850 m from the address (POL-DNR-02). Order is Rs 3,499 and the customer has no prior claims, so both an investigation and a goodwill reshipment are policy-compliant; which is better depends on how often this carrier's investigations succeed."
+    }
+  },
+  {
+    "id": "A2",
+    "title": "Scenario A (variant): repeat claimant, high-value signed delivery",
+    "category": "Critical",
+    "ticket": {
+      "ticket_id": "TKT-503",
+      "received_at": "2026-11-10T10:00",
+      "customer_id": "C103",
+      "channel": "chat",
+      "message": "Order ORD-1002 not received! I want my refund immediately."
+    },
+    "gold": {
+      "acceptable_actions": ["ESCALATE_FRAUD_REVIEW"],
+      "why": "Rs 14,999 order, delivery signed by 'K. Shah' with photo and GPS 25 m, and the customer has 3 not-received claims in 12 months: POL-DNR-03 requires a Risk & Fraud review, not a refund or a routine investigation."
+    }
+  },
+  {
+    "id": "A3",
+    "title": "Edge: not received, but reported only 20 hours after the Delivered scan",
+    "category": "Edge",
+    "ticket": {
+      "ticket_id": "TKT-504",
+      "received_at": "2026-11-10T10:00",
+      "customer_id": "C107",
+      "channel": "chat",
+      "message": "The app says my wireless mouse (ORD-1007) was delivered yesterday but I did not receive it."
+    },
+    "gold": {
+      "acceptable_actions": ["WAIT_48H_AND_RECHECK"],
+      "why": "Only 20 hours since the Delivered scan. POL-DNR-01: ask the customer to check with neighbours and security, re-check after 48 hours; an investigation or replacement is premature."
+    }
+  },
+  {
+    "id": "B",
+    "title": "Scenario B: return passed inspection, refund status has not changed",
+    "category": "Critical",
+    "ticket": {
+      "ticket_id": "TKT-505",
+      "received_at": "2026-11-10T10:00",
+      "customer_id": "C104",
+      "channel": "email",
+      "message": "My air fryer return for ORD-1004 was picked up two weeks back and the app says inspection passed, but there is still no refund. What is going on?"
+    },
+    "gold": {
+      "acceptable_actions": ["ESCALATE_FINANCE_REFUND_DELAY"],
+      "why": "Inspection passed on 30 Oct; 7 business days later the refund is still 'not_initiated', far past the 2-business-day initiation SLA (POL-REF-01). Escalate to Finance Ops as P1."
+    }
+  },
+  {
+    "id": "C",
+    "title": "Scenario C: conflicting and incomplete information",
+    "category": "Edge",
+    "ticket": {
+      "ticket_id": "TKT-506",
+      "received_at": "2026-11-10T10:00",
+      "customer_id": "C105",
+      "channel": "email",
+      "message": "I ordered a blue kurta, order no ORD-1006, it never arrived and the refund also hasn't come. Please refund Rs 2,199 now."
+    },
+    "gold": {
+      "acceptable_actions": ["REQUEST_CLARIFICATION"],
+      "why": "ORD-1006 belongs to a different customer (C106), is for a ceramic dinner set worth Rs 4,250 (not a Rs 2,199 kurta), has no tracking events, and has no return or refund on file. POL-VER-01: do not disclose or act; ask the customer to confirm the order number, registered email and invoice."
+    }
+  }
+]
